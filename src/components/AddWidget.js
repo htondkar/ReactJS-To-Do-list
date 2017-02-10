@@ -6,11 +6,10 @@ import Popover from 'material-ui/Popover';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
-import MenuItem from 'material-ui/MenuItem';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import Subheader from 'material-ui/Subheader';
 import RaisedButton from 'material-ui/RaisedButton';
-import {purple500} from 'material-ui/styles/colors';
+import {purple500, cyan500} from 'material-ui/styles/colors';
 
 const styles = {
   block: {
@@ -24,7 +23,7 @@ const styles = {
     borderRadius: '10px',
     minWidth: '250px',
     borderWidth: '2px',
-    borderColor: purple500,
+    borderColor: cyan500,
     borderStyle: 'solid',
     boxShadow: '0 0 10px grey'
   },
@@ -88,7 +87,7 @@ export default class AddWidget extends React.Component {
       status = 'pending',
       date = new Date(),
       id = Math.random().toString(16).slice(2);
-      this.props.addRemoveMethods.add({title,date,status,category,id});
+      this.props.stateChangeMethods.add({title,date,status,category,id});
       this.setState({
         modalIsOpen: false,
         taskTitle: ''

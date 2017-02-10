@@ -43,6 +43,7 @@ a {
   font-style: normal;
 }
 
+
 /*scroll bar */
 /* Turn on custom 8px wide scrollbar */
 ::-webkit-scrollbar {
@@ -84,7 +85,7 @@ a {
 	}
 
 .flip-container, .front, .back {
-	width: 500px;
+	width: 700px;
 	min-height: 600px;
 	border-radius: 20px;
 
@@ -142,7 +143,7 @@ a {
 .add-button {
   position: absolute;
   top: 90%;
-  left: 82.5%;
+  left: 85%;
 }
 .drop-down {
   width: 100%;
@@ -166,7 +167,8 @@ a {
   font-weight: 300;
   font-style: normal;
 }
-.task-row{
+.task-row {
+
   height: 50px;
   width: 100%;
   display: block;
@@ -177,8 +179,44 @@ a {
   font-family: cursive;
   line-height: 45px;
 }
+.done span{
+  transition: all 0.5s;
+  color: #aaa !important;
+}
+
+.pending span{
+  transition: all 0.5s;
+}
+
+.done {
+  box-shadow: 0 0 5px rgba(0,0,0,0.2) !important;
+}
 .task-info {
   padding-left: 20px;
+  float: left;
+}
+.control {
+  float: right;
+}
+
+.show-status {
+  float: right;
+  font-size: 16px;
+  transition: all 0.5s;
+  margin-left: 15px
+}
+.show-status span{
+  color: #66D7E6 !important;
+  transition: all 0.5s;
+}
+
+.show-status span.material-icons{
+  transition: all 0.5s;
+}
+.material-icons {
+  margin: 0 5px;
+  top: 5px;
+  color: #9D72C8 !important;
 }
 .title-row {
   font-weight: 600;
@@ -190,7 +228,7 @@ a {
 color: #ff4081;
 }
 .date-row {
-  color: blue;
+  color: grey;
   font-size: 16px;
-  font-family: monospace;
+  font-family: sans-serif;
 }

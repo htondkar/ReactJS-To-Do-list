@@ -28,6 +28,25 @@ export default class Dashboard extends React.Component {
     this.setState({tasks: nextState})
   }
 
+  changeStatus = (id) => {
+    const nextState = this.state.tasks.map((task)=>{
+      if (id == task.id) {
+        if (task.status === 'pending') {
+          task.status = 'done';
+          return task;
+        } else {
+          task.status = 'pending';
+          return task;
+        }
+      } else {
+        return task;
+      }
+    });
+    this.setState({tasks: nextState})
+  }
+
+  
+
   toggleView = (e) => {
     jquery('.flip-container').toggleClass('active');
     if (this.state.currentView) {
@@ -46,17 +65,19 @@ export default class Dashboard extends React.Component {
               toggleView={this.toggleView}
               currentView={this.state.currentView}
               tasks={this.state.tasks}
-              addRemoveMethods={{
+              stateChangeMethods={{
                 add: this.addTask,
-                remove: this.removeTask
+                remove: this.removeTask,
+                changeStatus: this.changeStatus
               }}/>
             <Back
               toggleView={this.toggleView}
               currentView={this.state.currentView}
               tasks={this.state.tasks}
-              addRemoveMethods={{
+              stateChangeMethods={{
                 add: this.addTask,
-                remove: this.removeTask
+                remove: this.removeTask,
+                changeStatus: this.changeStatus
               }}/>
           </div>
         </div>
