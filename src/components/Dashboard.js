@@ -2,9 +2,6 @@ import React, {PropTypes} from 'react';
 import jquery from 'jquery';
 
 import Front from './Front';
-import Back from './Back';
-import SingleTaskRow from './TaskRow';
-
 
 export default class Dashboard extends React.Component {
 
@@ -45,7 +42,7 @@ export default class Dashboard extends React.Component {
     this.setState({tasks: nextState})
   }
 
-  
+
 
   toggleView = (e) => {
     jquery('.flip-container').toggleClass('active');
@@ -62,15 +59,6 @@ export default class Dashboard extends React.Component {
         <div className="flip-container">
           <div className="flipper">
             <Front
-              toggleView={this.toggleView}
-              currentView={this.state.currentView}
-              tasks={this.state.tasks}
-              stateChangeMethods={{
-                add: this.addTask,
-                remove: this.removeTask,
-                changeStatus: this.changeStatus
-              }}/>
-            <Back
               toggleView={this.toggleView}
               currentView={this.state.currentView}
               tasks={this.state.tasks}

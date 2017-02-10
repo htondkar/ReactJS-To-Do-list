@@ -1,11 +1,9 @@
 import React, {PropTypes} from 'react';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import AddWidget from './AddWidget';
-import ToggleView from './ToggleView';
 import TaskRow from './TaskRow';
 
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
 
 export default class View extends React.Component {
 
@@ -18,24 +16,22 @@ export default class View extends React.Component {
         </div>
 
         <div className="task-row-wrapper">
-          <ul>
+          <CSSTransitionGroup
+            className='task'
+            component='ul'
+            transitionName='task'
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}>
             {this.props.tasks.map((task) => {
               return <TaskRow
                 task = {task}
                 key = {task.id}
                 stateChangeMethods = {this.props.stateChangeMethods}/>
             })}
-          </ul>
+          </CSSTransitionGroup>
         </div>
 
         <div className="footer">
-
-          <div className="toggle-view">
-            <ToggleView
-              toggleView={this.props.toggleView}
-              currentView={this.props.currentView}
-            />
-          </div>
 
           <div className="add-button">
             <AddWidget

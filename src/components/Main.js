@@ -14,7 +14,7 @@ export default class Main extends React.Component {
     return (
       <div className="wrap">
         <div className="title">
-          <h1>To do list</h1>
+          <h1>To-do list</h1>
         </div>
         <Dashboard/>
       </div>

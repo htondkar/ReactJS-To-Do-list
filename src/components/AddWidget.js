@@ -44,7 +44,6 @@ const styles = {
     },
 };
 
-
 export default class AddWidget extends React.Component {
 
   constructor(props) {

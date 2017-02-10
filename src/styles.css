@@ -143,7 +143,7 @@ a {
 .add-button {
   position: absolute;
   top: 90%;
-  left: 85%;
+  left: 87.5%;
 }
 .drop-down {
   width: 100%;
@@ -160,6 +160,7 @@ a {
 }
 .header {
   text-align: center;
+  border-bottom: 1px dashed grey;
 }
 .header > h2 {
   font-family: 'billabongregular';
@@ -179,6 +180,12 @@ a {
   font-family: cursive;
   line-height: 45px;
 }
+
+.task-row:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  background-color: #eee;
+}
+
 .done span{
   transition: all 0.5s;
   color: #aaa !important;
@@ -231,4 +238,30 @@ color: #ff4081;
   color: grey;
   font-size: 16px;
   font-family: sans-serif;
+}
+
+
+
+/*animation*/
+.task-enter {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+}
+.task-enter.task-enter-active {
+  background: #fff;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.task-leave {
+
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.task-leave.task-leave-active {
+
+  opacity: 0;
 }
